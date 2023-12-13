@@ -64,6 +64,7 @@ services:
       - db
 
   api-gateway:
+    name: api-gateway
     image: ernestwambua/tusafiri-api-gateway:latest
     environment:
       - NODE_ENV=production

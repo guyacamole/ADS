@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://montoya.rgrox.com:5000';
+const BASE_URL = 'http://api-gateway:5000';
 
 export const api = axios.create({ baseURL: BASE_URL });
 
