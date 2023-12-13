@@ -1,0 +1,172 @@
+@baseUrl = http://localhost:5004
+@locationsApi = {{baseUrl}}/api/locations
+@routesApi = {{baseUrl}}/api/routes
+@busesApi = {{baseUrl}}/api/buses
+@journeysApi = {{baseUrl}}/api/journeys
+
+### Root route
+GET {{baseUrl}}/
+
+
+### LOCATIONS
+
+### FETCH Locations
+GET {{locationsApi}}/
+
+### FETCH Locations count
+GET {{locationsApi}}/?count=true
+
+### CREATE Location
+POST {{locationsApi}}/
+Content-Type: application/json
+
+{
+    "name": "Marsabit",
+    "code": "MRS",
+    "lat": 2.2247590,
+    "lng": 9.3330776
+}
+
+###
+@location_id = 62595f27409897aa1cec88c7
+
+### FETCH Location
+GET {{locationsApi}}/{{location_id}}
+
+### EDIT Location
+PATCH {{locationsApi}}/{{location_id}}
+Content-Type: application/json
+
+{
+    "lat": 15.000001,
+    "lng": 70.000002
+}
+
+### DELETE Location
+DELETE {{locationsApi}}/{{location_id}}
+
+
+### ROUTES
+
+### FETCH routes
+GET {{routesApi}}/
+
+### FETCH routes count
+GET {{routesApi}}/?count=true
+
+### CREATE route
+POST {{routesApi}}/
+Content-Type: application/json
+
+{
+    "name": "T1",
+    "from": "MKS",
+    "to": "KMG"
+}
+
+###
+@route_id = 62595f87409897aa1cec88d5
+
+### FETCH route
+GET {{routesApi}}/{{route_id}}
+
+### EDIT route
+PATCH {{routesApi}}/{{route_id}}
+Content-Type: application/json
+
+{
+    "from": "KMG",
+    "to": "MKS"
+}
+
+### Delete route
+DELETE {{routesApi}}/{{route_id}}
+
+
+### BUS
+
+### FETCH all buses
+GET {{busesApi}}/
+
+### FETCH all buses count
+GET {{busesApi}}/?count=true
+
+### CREATE Bus
+POST {{busesApi}}/
+Content-Type: application/json
+
+{
+    "regNo": "KCK 555K",
+    "make": "Scania",
+    "yom": 2021,
+    "capacity": 51
+}
+
+###
+@bus_id = 62596040409897aa1cec88eb
+
+### FETCH bus
+GET {{busesApi}}/{{bus_id}}
+
+### EDIT bus
+PATCH {{busesApi}}/{{bus_id}}
+Content-Type: application/json
+
+{
+    "make": "Isuzu",
+    "capacity": 49
+}
+
+### GET bus seats
+GET {{busesApi}}/seats/{{bus_id}}
+
+### DELETE bus
+DELETE {{busesApi}}/{{bus_id}}
+
+
+
+### JOURNEY
+
+### FETCH journeys
+GET {{journeysApi}}/
+
+### FETCH journeys count
+GET {{journeysApi}}/?count=true
+
+### CREATE journey
+POST {{journeysApi}}/
+Content-Type: application/json
+
+{
+    "bus": "KCC 333C",
+    "route": "B1",
+    "fare": 1000,
+    "departureTime": 1650672000000,
+    "drivers": ["DRV0001/2022", "DRV0002/2022"]
+}
+
+###
+@journey_id = 625965b6e622ff5270245ea4
+
+### FETCH journey
+GET {{journeysApi}}/{{journey_id}}
+
+### EDIT journey
+PATCH {{journeysApi}}/{{journey_id}}
+Content-Type: application/json
+
+{
+    "fare": 750
+}
+
+### SEARCH Journey
+GET {{journeysApi}}/search?from=NRB&to=KSM&date=2022-04-22
+
+### FETCH journey booked seats
+GET {{journeysApi}}/{{journey_id}}/booked-seats
+
+### DELETE journey
+DELETE {{journeysApi}}/{{journey_id}}
+
+### FETCH available journeys
+GET {{journeysApi}}/available?route=B1

@@ -1,0 +1,218 @@
+body {
+    font-size: .875rem;
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.frac-width {
+    width: 30%;
+}
+
+.wrap-login {
+    height: 100%;
+    width: 100%
+}
+
+.login-container {
+    width: 560px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.login-form-title {
+    font-weight: 500;
+    font-size: 30px;
+    color: #555555;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+.login-form-label {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+#logo-span {
+    color: #EA3E36;
+}
+
+.spinner-primary {
+    color: #EA3E36;
+}
+
+.btn-primary {
+    background-color: #EA3E36;
+    color: white;
+    border: 0;
+}
+
+.btn-primary:disabled {
+    background-color: #ED4C56;
+}
+
+.btn-primary:hover {
+    background-color: #ED4C56;
+}
+
+.primary-invert:hover {
+    background-color: #EA3E36;
+    border-color: inherit;
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #EA3E36;
+}
+
+.navbar-light .navbar-nav .nav-link:hover
+{
+    color: #EA3E36;
+}
+
+.search-strip {
+    background-color: #EA3E36;
+    color: white;
+    border-radius: 5px;
+}
+
+.search-strip:hover {
+    background-color: #ED4C56;
+}
+
+.seat {
+    background-color: #EA3E36;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+.seat-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.booked {
+    background-color: #d1e7dd;
+    color: #555555;
+    cursor: pointer;
+}
+
+.seats-available {
+    /* background-color: #EA3E36; */
+    height: 20%;
+    font-size: xx-large;
+    border-radius: 3px;
+    color: white;
+}
+
+
+.invoice-box {
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+}
+
+.invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+    text-align: right;
+}
+
+.invoice-box table tr.top table td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 45px;
+    color: #333;
+}
+
+.invoice-box table tr.information table td {
+    padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+    border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .invoice-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+#ticket {
+    padding: 0;
+    width: 500px;
+    background-color: #FFF;
+    overflow: hidden;
+}
+
+#ticket-details {
+    border: 3px solid rgb(31, 37, 41);
+}
+
+.border-right {
+    border-right: 2px dashed rgb(109, 117, 125);
+}
+
+#amount {
+    border-radius: 5px;
+}

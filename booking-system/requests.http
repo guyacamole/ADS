@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:5003
+@bookingsApi = {{baseUrl}}/api/bookings
+@paymentsApi = {{baseUrl}}/api/payments
+
+@ticketsApi = {{baseUrl}}/api/tickets
+
+
+### ROOT route
+GET {{baseUrl}}
+
+### CREATE booking
+### journey "62594919d05a8c9a9ed299fc"
+### bus "62593a0d3810192cf96f2ec0"
+### seats "62593a0d3810192cf96f2ee4" "62593a0d3810192cf96f2ee6"
+POST {{bookingsApi}}/
+Content-Type: application/json
+
+{
+    "journey": "62594919d05a8c9a9ed299fc",
+    "seats": ["62593a0d3810192cf96f2ee4", "62593a0d3810192cf96f2ee6"],
+    "tickets": [
+        { "seat": "62593a0d3810192cf96f2ee4", "passengerName": "Ernest Wambua" },
+        { "seat": "62593a0d3810192cf96f2ee6", "passengerName": "Charles Obama" }
+    ]
+}
+
+### FETCH bookings
+GET {{bookingsApi}}/
+
+### FETCH booking
+GET {{bookingsApi}}/623cc24f027c1a07828163d9
+
+### DELETE booking
+DELETE {{bookingsApi}}/625949480ce5ca91e7a556bd
+
+### GET Tickets
+GET {{ticketsApi}}/625ace4cc13ea0998bc1a139
+
+### MAKE Payment
+POST {{paymentsApi}}
+Content-Type: application/json
+
+{
+    "amountPaid": 4640,
+    "accountNo": "+245711347790"
+}

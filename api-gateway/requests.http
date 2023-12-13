@@ -1,0 +1,48 @@
+@base_url=http://localhost:5000
+@auth_routes={{base_url}}/api/auth
+
+### Root route
+GET {{base_url}}/
+
+### Signup user
+POST {{auth_routes}}/users/signup
+Content-Type: application/json
+
+{
+    "firstName": "Ernest",
+    "lastName": "Wambua",
+    "email": "ernestwambua2@gmail.com",
+    "phoneNo": "+254719286396",
+    "password": "password123"
+}
+
+### Signin user
+POST {{auth_routes}}/users/signin
+Content-Type: application/json
+
+{
+    "email": "ernestwambua2@gmail.com",
+    "password": "password123"
+}
+
+### Refresh token
+POST {{auth_routes}}/users/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "8ae30842-9e74-411e-97b1-12d943b88b36"
+}
+
+### Testing the gateway
+GET {{base_url}}/fleets/locations
+
+### Testing POST request
+POST {{base_url}}/fleets/locations/new
+Content-Type: application/json
+
+{
+    "name": "Isiolo",
+    "code": "ISL",
+    "lat": 2.333445,
+    "lng": 2.334467
+}

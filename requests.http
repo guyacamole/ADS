@@ -1,0 +1,32 @@
+### Employee Management
+GET http://localhost:5005/
+
+### Fleet Management
+GET http://localhost:5004/
+
+### Booking System
+GET http://localhost:5003/
+
+### API Gateway
+GET http://localhost:5000/
+
+### Signup user
+POST http://localhost:5000/api/auth/users/signup
+Content-Type: application/json
+
+{
+    "firstName": "Admin",
+    "lastName": "Admin",
+    "email": "admin@admin.tusafiri.co.ke",
+    "phoneNo": "+254712345678",
+    "password": "@dmin123"
+}
+
+### Payment
+POST http://localhost:5003/api/payments
+Content-Type: application/json
+
+{
+    "amountPaid": 2610,
+    "accountNo": "+254719286396"
+}

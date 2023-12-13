@@ -1,0 +1,70 @@
+@base_url=http://localhost:5005
+@employees_api={{base_url}}/api/employees
+
+
+### Root route
+GET {{base_url}}/
+
+### FETCH employees
+GET {{employees_api}}/
+
+### CREATE employee
+POST {{employees_api}}/new
+Content-Type: application/json
+
+{
+    "firstName": "Betty",
+    "lastName": "Mueni",
+    "idNo": 17281555,
+    "email": "betty@gmail.com",
+    "phoneNumber": "+254750286330",
+    "employeeId": "HDM0002/2017",
+    "password": "password",
+    "role": "help-desk"
+}
+
+@employee_id = 623d4db7a6730e28b15eb019
+
+### FETCH employee
+GET {{employees_api}}/{{employee_id}}
+
+### EDIT employee
+PATCH {{employees_api}}/{{employee_id}}
+Content-Type: application/json
+
+{
+    "email": "bettymueni12@gmail.com"
+}
+
+### Change password
+PATCH {{employees_api}}/employee/change-password?id=623d4db7a6730e28b15eb019
+Content-Type: application/json
+
+{
+    "oldPassword": "password",
+    "newPassword": "password2"
+}
+
+### Change role
+PATCH {{employees_api}}/employee/change-role?id=623d4db7a6730e28b15eb019
+Content-Type: application/json
+
+{
+    "roleName": "admin"
+}
+
+### DELETE Employee
+DELETE {{employees_api}}/{{employee_id}}
+
+
+### FETCH drivers
+GET {{employees_api}}/drivers
+
+### FETCH fleet managers
+GET {{employees_api}}/fleet-managers
+
+### FETCH snm managers
+GET {{employees_api}}/snm-managers
+
+### FETCH help desk
+GET {{employees_api}}/help-desk
